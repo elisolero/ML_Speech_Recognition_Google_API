@@ -3,6 +3,10 @@
 Google Cloud Speech API Python Samples
 ===============================================================================
 
+for small files run transcribe.py
+for large files run transcribe_async.py
+
+
 .. image:: https://gstatic.com/cloudssh/images/open-btn.png
    :target: https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/GoogleCloudPlatform/python-docs-samples&page=editor&open_in_editor=speech/cloud-client/README.rst
 

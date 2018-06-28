@@ -15,7 +15,7 @@ client = speech.SpeechClient()
 file_name = os.path.join(
     os.path.dirname(__file__),
     'resources',
-    '20.wav')
+    'Call_357.wav')
 
 # Loads the audio into memory
 with io.open(file_name, 'rb') as audio_file:
