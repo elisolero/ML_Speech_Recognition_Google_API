@@ -1,20 +1,22 @@
+import os
 from pydub import AudioSegment
-from pydub.playback import play
 
-audio_in_file = "./resources/22.wav"
-audio_out_file = "./resources/23.wav"
 
-# create 1 sec of silence audio segment
-one_sec_segment = AudioSegment.silent(duration=1000)  #duration in milliseconds
+for x in os.listdir('./resources/ITSD_Calls'):
+    if x.endswith('.wav'):
+        print(x)
+        file_to_mp3 = os.path.join(
+            os.path.dirname(__file__),
+            'resources/ITSD_Calls',
+            x)
+        song = AudioSegment.from_wav(file_to_mp3)
+        song.export("./resources/ITSD_Calls_copy/"+x, format="wav")
 
-#read wav file to an audio segment
-song = AudioSegment.from_wav(audio_in_file)
 
-#Add above two audio segments
-final_song = one_sec_segment + song
+    # if os.path.isfile(x): print 'f-', x
+    # elif os.path.isdir(x): print 'd-', x
+    # elif os.path.islink(x): print 'l-', x
+    # else: print '---', x
 
-#Either save modified audio
-final_song.export(audio_out_file, format="wav")
 
-#Or Play modified audio
-play(final_song)
+
